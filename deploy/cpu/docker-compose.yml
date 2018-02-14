@@ -2,7 +2,6 @@
  services:
    db:
      image: postgres:9.6.6
-     network_mode: "host"
      container_name: dva-pg
      volumes:
       - dvapgdata:/var/lib/postgresql/data
@@ -10,7 +9,6 @@
        - ../common.env
    rabbit:
      image: rabbitmq
-     network_mode: "host"
      container_name: dva-rmq
      env_file:
        - ../common.env
@@ -18,7 +16,6 @@
        - dvarabbit:/var/lib/rabbitmq
    redis:
      image: bitnami/redis:latest
-     network_mode: "host"
      container_name: dva-redis
      env_file:
        - ../common.env
@@ -26,7 +23,6 @@
        - dvaredis:/bitnami
    dva:
      image: akshayubhat/dva-auto:latest
-     network_mode: "host"
      container_name: webserver
      env_file:
        - ../common.env
