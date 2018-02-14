@@ -18,7 +18,7 @@ RUN wget https://yt-dl.org/downloads/latest/youtube-dl -O /bin/youtube-dl
 RUN pip install psycopg2-binary
 RUN chmod a+rx /bin/youtube-dl
 RUN youtube-dl -U
-RUN git clone https://github.com/akshayubhat/DeepVideoAnalytics /root/DVA
+RUN git clone https://github.com/mexicanamerican/DeepVideoAnalytics /root/DVA
 WORKDIR "/root/DVA"
 RUN pip install --upgrade cffi
 RUN pip install --no-deps keras
