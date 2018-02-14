@@ -13,7 +13,9 @@ RUN apt-get update -q && apt-get install -y pkg-config python-dev python-opencv 
 RUN dpkg -L python-opencv
 RUN pip install --upgrade setuptools
 RUN pip install --upgrade matplotlib
+RUN pip install --ignore-installed https://anaconda.org/intel/tensorflow/1.4.0/download/tensorflow-1.4.0-cp27-cp27mu-linux_x86_64.whl
 RUN wget https://yt-dl.org/downloads/latest/youtube-dl -O /bin/youtube-dl
+RUN pip install psycopg2-binary
 RUN chmod a+rx /bin/youtube-dl
 RUN youtube-dl -U
 RUN git clone https://github.com/akshayubhat/DeepVideoAnalytics /root/DVA
